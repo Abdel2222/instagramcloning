@@ -1,0 +1,46 @@
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Assurez-vous que la hauteur est suffisante pour permettre le défilement */
+  background-color: #fafafa;
+}
+
+.loginContainer {
+  margin-top: 20px; /* Espacement du haut de la page */
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 70%; /* Ajustez la taille de votre logo */
+  margin-bottom: 20px;
+}
+
+.loginForm {
+  width: 80%; /* Ajustez la largeur du formulaire selon vos besoins */
+}
+
+.textField {
+  margin-bottom: 15px;
+}
+
+.loginButton {
+  margin-top: 10px;
+}
+
+.rightPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneImage {
+  max-width: 100%; /* Ajustez la taille maximale de l'image de téléphone */
+  height: auto;
+}
