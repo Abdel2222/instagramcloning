@@ -7,11 +7,12 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import logo from '../../images/logoinsta.png';
 import phoneImage from '../../images/instafon.svg';
-import './LoginPage.css';
+import './SignUp.css';
 
-const LoginPage = () => {
+const SignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -21,27 +22,38 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Username:', username);
     console.log('Password:', password);
-    // Ajoutez ici votre logique de connexion, par exemple :
-    // - Appel à une API d'authentification
-    // - Validation des informations de connexion
-    // - Redirection vers une nouvelle page
+    console.log('Email:', email);
+    // Ajoutez ici votre logique d'inscription
   };
 
   return (
-    <Box className="loginPage">
-      <Grid container spacing={0} className="loginContainer">
-        <Grid item xs={12} md={7} className="leftPanel">
+    <Box className="signupPage">
+      <Grid container spacing={2} className="signupContainer">
+        <Grid item xs={12} md={6} className="leftPanel">
           <img src={logo} alt="Instagram Logo" className="logo" />
-          <Box component="form" onSubmit={handleSubmit} className="loginForm">
+          <Box component="form" onSubmit={handleSubmit} className="signupForm">
             <TextField
               fullWidth
               variant="outlined"
               margin="normal"
-              label="Phone number, username, or email"
+              label="Email"
+              value={email}
+              onChange={handleEmailChange}
+              className="textField"
+            />
+            <TextField
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              label="Username"
               value={username}
               onChange={handleUsernameChange}
               className="textField"
@@ -61,18 +73,18 @@ const LoginPage = () => {
               fullWidth
               variant="contained"
               color="primary"
-              className="loginButton"
+              className="signupButton"
             >
-              Log In
+              Sign Up
             </Button>
-            <Typography variant="body2" align="center">
-              <Link to="/signup" className="signUpLink">
-                Don't have an account? Sign up
+            <Typography variant="body2" align="center" className="loginText">
+              <Link to="/signin" className="loginLink">
+                Already have an account? Sign in
               </Link>
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} md={5} className="rightPanel">
+        <Grid item xs={12} md={6} className="rightPanel">
           <img src={phoneImage} alt="Phone Preview" className="phoneImage" />
         </Grid>
       </Grid>
@@ -80,5 +92,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
-
+export default SignUp;

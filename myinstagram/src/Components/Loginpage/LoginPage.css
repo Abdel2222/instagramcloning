@@ -2,18 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Assurez-vous que la hauteur est suffisante pour permettre le défilement */
+  height: 100vh;
   background-color: #fafafa;
 }
 
 .loginContainer {
-  margin-top: 20px; /* Espacement du haut de la page */
+  max-width: 935px; /* Correspond à la largeur de la page Instagram */
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .leftPanel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -23,15 +24,22 @@
 }
 
 .loginForm {
-  width: 80%; /* Ajustez la largeur du formulaire selon vos besoins */
+  width: 100%;
+  max-width: 350px; /* Largeur maximale du formulaire */
 }
 
 .textField {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .loginButton {
-  margin-top: 10px;
+  margin-top: 16px;
+  text-transform: none;
+  background-color: #0095f6; /* Couleur du bouton "Login" */
+}
+
+.loginButton:hover {
+  background-color: #0077b5; /* Couleur au survol */
 }
 
 .rightPanel {
@@ -41,6 +49,25 @@
 }
 
 .phoneImage {
-  max-width: 100%; /* Ajustez la taille maximale de l'image de téléphone */
+  max-width: 100%;
   height: auto;
+}
+
+.loginContainer .leftPanel img,
+.loginContainer .rightPanel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries pour la réactivité */
+@media (max-width: 960px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+  .leftPanel,
+  .rightPanel {
+    width: 100%;
+  }
 }

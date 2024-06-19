@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import logo from '../../images/logoinsta.png';
 import phoneImage from '../../images/instafon.svg';
-import './LoginPage.css';
+import './SignIn.css';
 
-const LoginPage = () => {
+const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -25,23 +25,20 @@ const LoginPage = () => {
     e.preventDefault();
     console.log('Username:', username);
     console.log('Password:', password);
-    // Ajoutez ici votre logique de connexion, par exemple :
-    // - Appel à une API d'authentification
-    // - Validation des informations de connexion
-    // - Redirection vers une nouvelle page
+    // Ajoutez ici votre logique de connexion
   };
 
   return (
-    <Box className="loginPage">
-      <Grid container spacing={0} className="loginContainer">
-        <Grid item xs={12} md={7} className="leftPanel">
+    <Box className="signInPage">
+      <Grid container spacing={2} className="signInContainer">
+        <Grid item xs={12} md={6} className="leftPanel">
           <img src={logo} alt="Instagram Logo" className="logo" />
-          <Box component="form" onSubmit={handleSubmit} className="loginForm">
+          <Box component="form" onSubmit={handleSubmit} className="signInForm">
             <TextField
               fullWidth
               variant="outlined"
               margin="normal"
-              label="Phone number, username, or email"
+              label="Username, phone number or email"
               value={username}
               onChange={handleUsernameChange}
               className="textField"
@@ -61,18 +58,18 @@ const LoginPage = () => {
               fullWidth
               variant="contained"
               color="primary"
-              className="loginButton"
+              className="signInButton"
             >
-              Log In
+              Sign In
             </Button>
-            <Typography variant="body2" align="center">
+            <Typography variant="body2" align="center" className="signUpText">
               <Link to="/signup" className="signUpLink">
                 Don't have an account? Sign up
               </Link>
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} md={5} className="rightPanel">
+        <Grid item xs={12} md={6} className="rightPanel">
           <img src={phoneImage} alt="Phone Preview" className="phoneImage" />
         </Grid>
       </Grid>
@@ -80,5 +77,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
-
+export default SignIn;

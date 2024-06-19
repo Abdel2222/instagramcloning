@@ -1,0 +1,62 @@
+.signInPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fafafa;
+  }
+  
+  .signInContainer {
+    margin-top: 20px;
+  }
+  
+  .leftPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  
+  .signInForm {
+    width: 80%;
+  }
+  
+  .textField {
+    margin-bottom: 15px;
+  }
+  
+  .signInButton {
+    margin-top: 16px;
+    text-transform: none;
+    box-shadow: none;
+  }
+  
+  .signInButton:hover {
+    background-color: #2e77d0;
+    box-shadow: none;
+  }
+  
+  .rightPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .phoneImage {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .signInContainer .leftPanel img,
+  .signInContainer .rightPanel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
