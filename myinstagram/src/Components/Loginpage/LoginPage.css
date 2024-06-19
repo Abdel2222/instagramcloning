@@ -15,11 +15,13 @@
 .leftPanel {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .logo {
   width: 70%; /* Ajustez la taille de votre logo */
+  max-width: 200px; /* Taille maximale du logo */
   margin-bottom: 20px;
 }
 
@@ -32,14 +34,18 @@
   margin-bottom: 16px;
 }
 
-.loginButton {
+.loginButton,
+.signUpButton {
   margin-top: 16px;
   text-transform: none;
-  background-color: #0095f6; /* Couleur du bouton "Login" */
+  box-shadow: none;
+  background-color: #00a400; /* Couleur du bouton vert */
+  color: #fff; /* Texte blanc */
 }
 
-.loginButton:hover {
-  background-color: #0077b5; /* Couleur au survol */
+.loginButton:hover,
+.signUpButton:hover {
+  background-color: #008d00; /* Couleur au survol */
 }
 
 .rightPanel {
@@ -51,17 +57,19 @@
 .phoneImage {
   max-width: 100%;
   height: auto;
+  max-height: 300px; /* Taille maximale de l'image */
 }
 
 .loginContainer .leftPanel img,
 .loginContainer .rightPanel img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
 /* Media queries pour la réactivité */
+
 @media (max-width: 960px) {
   .loginContainer {
     flex-direction: column;
@@ -71,3 +79,17 @@
     width: 100%;
   }
 }
+
+@media (max-width: 600px) {
+  .logo {
+    max-width: 50%; /* Réduire la taille du logo pour les écrans plus petits */
+  }
+}
+
+@media (max-width: 480px) {
+  .loginForm {
+    max-width: 280px; /* Ajuster la largeur maximale du formulaire pour les petits écrans */
+  }
+}
+
+

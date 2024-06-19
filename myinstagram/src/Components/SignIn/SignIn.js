@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import logo from '../../images/logoinsta.png';
-import phoneImage from '../../images/instafon.svg';
+import phoneImage from '../../images/gsminsta.jpeg';
 import './SignIn.css';
 
 const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -26,6 +27,11 @@ const SignIn = () => {
     console.log('Username:', username);
     console.log('Password:', password);
     // Ajoutez ici votre logique de connexion
+  };
+
+  const handleLoginClick = () => {
+    // Redirection vers la page LoginPage
+    navigate('/login');
   };
 
   return (
@@ -54,11 +60,15 @@ const SignIn = () => {
               className="textField"
             />
             <Button
-              type="submit"
+              onClick={handleLoginClick}
               fullWidth
               variant="contained"
               color="primary"
               className="signInButton"
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#4CAF50'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#2196F3'}
+              onMouseDown={(e) => e.target.style.backgroundColor = '#f44336'}
+              onMouseUp={(e) => e.target.style.backgroundColor = '#4CAF50'}
             >
               Sign In
             </Button>
@@ -78,3 +88,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+

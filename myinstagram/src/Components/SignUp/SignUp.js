@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import logo from '../../images/logoinsta.png';
-import phoneImage from '../../images/instafon.svg';
+import phoneImage from '../../images/instasign.jpeg';
 import './SignUp.css';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const navigate = useNavigate(); // Utilisation de useNavigate pour la navigation
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -32,6 +33,11 @@ const SignUp = () => {
     console.log('Password:', password);
     console.log('Email:', email);
     // Ajoutez ici votre logique d'inscription
+  };
+
+  const handleLoginClick = () => {
+    // Redirection vers la page LoginPage
+    navigate('/login');
   };
 
   return (
@@ -69,18 +75,19 @@ const SignUp = () => {
               className="textField"
             />
             <Button
-              type="submit"
+              onClick={handleLoginClick}
               fullWidth
               variant="contained"
               color="primary"
               className="signupButton"
             >
-              Sign Up
+              Login
             </Button>
             <Typography variant="body2" align="center" className="loginText">
-              <Link to="/signin" className="loginLink">
-                Already have an account? Sign in
-              </Link>
+              Already have an account?{' '}
+              <Button component={Link} to="/signin" className="loginLink">
+                Sign in
+              </Button>
             </Typography>
           </Box>
         </Grid>

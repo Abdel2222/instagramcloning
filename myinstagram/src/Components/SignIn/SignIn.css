@@ -59,4 +59,13 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  .signupButton {
+    /* Autres styles */
+    background-color: #7e57c2; /* Couleur mauve */
+    transition: background-color 0.3s ease; /* Transition fluide */
+  }
+  
+  .signupButton:hover {
+    background-color: #5e35b1; /* Couleur mauve plus sombre au survol */
+  }
   

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import logo from '../../images/logoinsta.png';
 import phoneImage from '../../images/instafon.svg';
@@ -33,7 +32,7 @@ const LoginPage = () => {
 
   return (
     <Box className="loginPage">
-      <Grid container spacing={0} className="loginContainer">
+      <Grid container spacing={0} className="loginContainer" boxShadow={10}> {/* Ajout de l'effet de shadow box */}
         <Grid item xs={12} md={7} className="leftPanel">
           <img src={logo} alt="Instagram Logo" className="logo" />
           <Box component="form" onSubmit={handleSubmit} className="loginForm">
@@ -62,14 +61,25 @@ const LoginPage = () => {
               variant="contained"
               color="primary"
               className="loginButton"
+              style={{ backgroundColor: '#2196F3', boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)' }}
+              onMouseDown={(e) => e.target.style.backgroundColor = '#0D47A1'}
+              onMouseUp={(e) => e.target.style.backgroundColor = '#2196F3'}
             >
-              Log In
+              Let's Go {/* Modification du texte du bouton */}
             </Button>
-            <Typography variant="body2" align="center">
-              <Link to="/signup" className="signUpLink">
-                Don't have an account? Sign up
-              </Link>
-            </Typography>
+            <Button
+              component={Link}
+              to="/signup"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className="signUpButton"
+              style={{ backgroundColor: '#4CAF50', boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)' }}
+              onMouseDown={(e) => e.target.style.backgroundColor = '#1B5E20'}
+              onMouseUp={(e) => e.target.style.backgroundColor = '#4CAF50'}
+            >
+              Already have an account? Sign Up {/* Modification du texte du bouton Sign Up */}
+            </Button>
           </Box>
         </Grid>
         <Grid item xs={12} md={5} className="rightPanel">
@@ -81,4 +91,6 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
 
